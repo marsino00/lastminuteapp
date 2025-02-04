@@ -24,6 +24,10 @@ export const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
+  link: {
+    color: '#007AFF',
+    textDecorationLine: 'underline',
+  },
   starContainer: {
     flexDirection: 'row',
     marginBottom: 5,
@@ -39,5 +43,18 @@ export const styles = StyleSheet.create({
   text: {
     marginLeft: 8,
     fontSize: 16,
+  },
+  ratingContainer: {
+    paddingHorizontal: 8,
+    paddingVertical: 8,
+    borderRadius: 5,
+  },
+  ratingText: {
+    color: '#fff',
+    fontWeight: 'bold',
+  },
+  ratingRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
 });
