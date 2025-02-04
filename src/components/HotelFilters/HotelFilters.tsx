@@ -28,6 +28,7 @@ const HotelFilters: React.FC<FilterProps> = ({
       <View style={styles.sortControls}>
         <Text style={styles.text}>Order by:</Text>
         <Dropdown
+          testID="dropdown"
           data={sortOptions}
           labelField="label"
           valueField="value"

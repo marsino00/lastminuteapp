@@ -7,7 +7,8 @@ module.exports = {
       '|react-navigation' +
       '|react-native-reanimated' +
       '|react-native-gesture-handler' +
-      '|react-native-vector-icons' + // ✅ Agregar react-native-vector-icons
+      '|react-native-vector-icons' +
+      '|react-native-element-dropdown' +
       ')/)',
   ],
   moduleNameMapper: {
