@@ -18,6 +18,7 @@ const StarRating: React.FC<StarRatingProps> = ({
     <View style={styles.starContainer}>
       {Array.from({length: maxStars}, (_, index) => (
         <Icon
+          testID="star-icon"
           key={index}
           name={index < stars ? 'star' : 'star-o'}
           size={size}

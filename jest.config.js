@@ -1,30 +1,19 @@
 module.exports = {
   preset: 'react-native',
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   transformIgnorePatterns: [
-    'node_modules/(?!((jest-)?react-native(-.*)?|@react-native(-community)?|i18n-js|react-navigation|@react-navigation/.*|@react-native-picker|victory(-.*))/)',
+    'node_modules/(?!(react-native' +
+      '|@react-native' +
+      '|react-navigation' +
+      '|react-native-reanimated' +
+      '|react-native-gesture-handler' +
+      '|react-native-vector-icons' + // ✅ Agregar react-native-vector-icons
+      ')/)',
   ],
-  testPathIgnorePatterns: [
-    './__tests__/*',
-    './node_modules/',
-    './src/models/*',
-    './src/assets/*',
-    './src/styles/*',
-  ],
-  clearMocks: true,
-  collectCoverage: false,
-  coverageDirectory: 'coverage',
-  collectCoverageFrom: ['src/**'],
-  coveragePathIgnorePatterns: [
-    '/node_modules/',
-    './types/.ts$',
-    './styles/.ts$',
-    './src/models/*',
-    './src/assets/*',
-    './src/pages/*',
-    './src/styles/*',
-  ],
-  testEnvironment: 'node',
-  coverageProvider: 'v8',
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-  coverageReporters: ['html', 'text', 'text-summary', 'cobertura', 'lcov'],
+  moduleNameMapper: {
+    '\\.svg': '<rootDir>/__mocks__/svgMock.js',
+  },
+  globals: {
+    __DEV__: true,
+  },
 };
