@@ -46,7 +46,7 @@ export const styles = StyleSheet.create({
   },
   price: {
     fontSize: 30,
-    fontWeight: 'bold',
+    fontWeight: '900',
     color: '#F2007D',
   },
   ratingContainer: {

@@ -2,11 +2,41 @@ import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
-    justifyContent: 'center',
-    alignItems: 'center',
-
-    padding: 20,
+    padding: 10,
+    margin: 10,
     backgroundColor: '#f5f5f5',
+  },
+  textInputContainer: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+  },
+  inputCombo: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  input: {
+    height: 40,
+    borderColor: '#ccc',
+    borderWidth: 1,
+    borderRadius: 5,
+    paddingHorizontal: 10,
+    backgroundColor: '#fff',
+    marginHorizontal: 5,
+  },
+  dropdown: {
+    width: '90%',
+    borderColor: '#ccc',
+    borderWidth: 1,
+    borderRadius: 5,
+    paddingHorizontal: 20,
+    backgroundColor: '#fff',
+    marginBottom: 10,
+  },
+  sortControls: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    width: '90%',
+    gap: 10,
   },
   centered: {
     justifyContent: 'center',
@@ -14,7 +44,6 @@ export const styles = StyleSheet.create({
   },
   list: {
     gap: 20,
-    paddingHorizontal: 20,
   },
   card: {
     backgroundColor: '#fff',
@@ -32,6 +61,11 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 5,
   },
+  text: {
+    fontSize: 16,
+    fontFamily: 'Arial',
+    fontWeight: 'medium',
+  },
   image: {
     width: '100%',
     height: 150,
@@ -41,5 +75,21 @@ export const styles = StyleSheet.create({
   error: {
     color: 'red',
     fontSize: 16,
+  },
+  sortButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#007bff',
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 5,
+    marginBottom: 20,
+  },
+  sortButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    alignItems: 'center',
+    marginRight: 8,
   },
 });

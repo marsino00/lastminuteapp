@@ -11,17 +11,19 @@ import {
   getRatingColor,
 } from '../../utils/hotelUtils';
 import StarRating from '../StarRating/StarRating';
-
-const {width} = Dimensions.get('window');
+import {useMemo} from 'react';
 
 const HotelCard: React.FC<{hotel: Hotel}> = ({hotel}) => {
+  const {width} = Dimensions.get('window');
+  const images = useMemo(() => hotel.gallery, [hotel.gallery]);
+
   return (
     <View style={styles.card}>
       <Carousel
         loop
         width={width - 55}
         height={width / 2}
-        data={hotel.gallery}
+        data={images}
         panGestureHandlerProps={{
           activeOffsetX: [-10, 10],
         }}
