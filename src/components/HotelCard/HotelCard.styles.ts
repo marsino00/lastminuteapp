@@ -44,14 +44,18 @@ export const styles = StyleSheet.create({
     marginLeft: 8,
     fontSize: 16,
   },
+  price: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: '#F2007D',
+  },
   ratingContainer: {
     paddingHorizontal: 12,
     paddingVertical: 12,
     borderRadius: 5,
   },
   checkTimeContainer: {
-    marginTop: 5,
-    marginBottom: 5,
+    marginVertical: 5,
   },
   ratingText: {
     color: '#fff',

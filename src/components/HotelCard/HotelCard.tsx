@@ -84,10 +84,8 @@ const HotelCard: React.FC<{hotel: Hotel}> = ({hotel}) => {
       </View>
       <View style={styles.ratingRow}>
         <View style={styles.row}>
-          <Icon name="money" size={18} color="#28a745" />
-          <Text style={styles.text}>
-            {hotel.price} {hotel.currency}
-          </Text>
+          <Text style={styles.price}>{hotel.price}</Text>
+          <Text style={styles.text}>{hotel.currency}</Text>
         </View>
         <View
           style={[
