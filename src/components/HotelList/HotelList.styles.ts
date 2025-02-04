@@ -2,12 +2,19 @@ import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
+    justifyContent: 'center',
+    alignItems: 'center',
+
     padding: 20,
     backgroundColor: '#f5f5f5',
   },
   centered: {
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  list: {
+    gap: 20,
+    paddingHorizontal: 20,
   },
   card: {
     backgroundColor: '#fff',
