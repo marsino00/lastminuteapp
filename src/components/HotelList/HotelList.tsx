@@ -68,7 +68,7 @@ const HotelList: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.container}>
+      <View style={styles.filterContainer}>
         <View style={styles.sortControls}>
           <Text style={styles.text}>Order by:</Text>
           <Dropdown

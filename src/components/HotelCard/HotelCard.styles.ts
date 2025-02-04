@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
   },
   imageContainer: {
     borderRadius: 10,
-    width: '90%',
+    width: '100%',
     height: 180,
     overflow: 'hidden',
   },
@@ -45,7 +45,7 @@ export const styles = StyleSheet.create({
     fontSize: 16,
   },
   price: {
-    fontSize: 30,
+    fontSize: 35,
     fontWeight: '900',
     color: '#F2007D',
   },
@@ -60,6 +60,7 @@ export const styles = StyleSheet.create({
   ratingText: {
     color: '#fff',
     fontWeight: 'bold',
+    fontSize: 18,
   },
   ratingRow: {
     flexDirection: 'row',

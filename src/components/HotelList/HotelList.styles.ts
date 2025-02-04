@@ -3,12 +3,15 @@ import {StyleSheet} from 'react-native';
 export const styles = StyleSheet.create({
   container: {
     padding: 10,
-    margin: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: '#f5f5f5',
+    gap: 1,
   },
   textInputContainer: {
     flexDirection: 'row',
     alignItems: 'flex-start',
+    gap: 20,
   },
   inputCombo: {
     flexDirection: 'row',
@@ -23,18 +26,31 @@ export const styles = StyleSheet.create({
     backgroundColor: '#fff',
     marginHorizontal: 5,
   },
+  filterContainer: {
+    backgroundColor: '#ffffff',
+    padding: 15,
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowOffset: {width: 0, height: 2},
+    shadowRadius: 4,
+    elevation: 3,
+    marginBottom: 15,
+  },
   dropdown: {
+    height: 45,
     width: '90%',
     borderColor: '#ccc',
     borderWidth: 1,
-    borderRadius: 5,
-    paddingHorizontal: 20,
+    borderRadius: 8,
+    paddingHorizontal: 15,
     backgroundColor: '#fff',
     marginBottom: 10,
   },
   sortControls: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
+    alignItems: 'center',
     width: '90%',
     gap: 10,
   },
@@ -44,6 +60,9 @@ export const styles = StyleSheet.create({
   },
   list: {
     gap: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingBottom: 80,
   },
   card: {
     backgroundColor: '#fff',
