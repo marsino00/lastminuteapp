@@ -45,9 +45,13 @@ export const styles = StyleSheet.create({
     fontSize: 16,
   },
   ratingContainer: {
-    paddingHorizontal: 8,
-    paddingVertical: 8,
+    paddingHorizontal: 12,
+    paddingVertical: 12,
     borderRadius: 5,
+  },
+  checkTimeContainer: {
+    marginTop: 5,
+    marginBottom: 5,
   },
   ratingText: {
     color: '#fff',

@@ -1,62 +1,20 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  Image,
-  Dimensions,
-  TouchableOpacity,
-  Linking,
-  Platform,
-} from 'react-native';
+import {View, Text, Image, Dimensions, TouchableOpacity} from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
 import {Hotel} from 'src/store/hotelSlice/hotelSlice.types';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {styles} from './HotelCard.styles';
+import {
+  openMaps,
+  callPhone,
+  sendEmail,
+  getRatingColor,
+} from '../../utils/hotelUtils';
+import StarRating from '../StarRating/StarRating';
 
 const {width} = Dimensions.get('window');
 
 const HotelCard: React.FC<{hotel: Hotel}> = ({hotel}) => {
-  const openMaps = () => {
-    const {latitude, longitude, address, city} = hotel.location;
-    const query = encodeURIComponent(`${address}, ${city}`);
-    const coords = `${latitude},${longitude}`;
-
-    const url = Platform.select({
-      ios: `maps:0,0?q=${query}@${coords}`,
-      android: `geo:0,0?q=${coords}(${query})`,
-    });
-
-    if (url) {
-      Linking.openURL(url).catch(err =>
-        console.error('Error at opening map', err),
-      );
-    }
-  };
-
-  const renderStars = (stars: number) => (
-    <View style={styles.starContainer}>
-      {Array.from({length: 5}, (_, index) => (
-        <Icon
-          key={index}
-          name={index < stars ? 'star' : 'star-o'}
-          size={16}
-          color={index < stars ? '#FFD700' : '#C0C0C0'}
-          style={styles.star}
-        />
-      ))}
-    </View>
-  );
-
-  const getRatingColor = (rating: number) => {
-    if (rating >= 8) {
-      return '#28a745';
-    } else if (rating >= 6) {
-      return '#ffc107';
-    } else {
-      return '#dc3545';
-    }
-  };
-
   return (
     <View style={styles.card}>
       <Carousel
@@ -78,15 +36,52 @@ const HotelCard: React.FC<{hotel: Hotel}> = ({hotel}) => {
         )}
       />
       <Text style={styles.title}>{hotel.name}</Text>
-      <TouchableOpacity onPress={openMaps} style={styles.row}>
+      <StarRating stars={hotel.stars} />
+
+      <TouchableOpacity
+        onPress={() => callPhone(hotel.contact.phoneNumber)}
+        style={styles.row}>
+        <Icon name="phone" size={18} color="#17a2b8" />
+        <Text style={[styles.text, styles.link]}>
+          {hotel.contact.phoneNumber}
+        </Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={() => sendEmail(hotel.contact.email)}
+        style={styles.row}>
+        <Icon name="envelope" size={18} color="#f39c12" />
+        <Text style={[styles.text, styles.link]}>{hotel.contact.email}</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() =>
+          openMaps(
+            hotel.location.latitude,
+            hotel.location.longitude,
+            hotel.location.address,
+            hotel.location.city,
+          )
+        }
+        style={styles.row}>
         <Icon name="map-marker" size={18} color="#d9534f" />
         <Text style={[styles.text, styles.link]}>
           {hotel.location.address}, {hotel.location.city}
         </Text>
       </TouchableOpacity>
-
-      {renderStars(hotel.stars)}
-
+      <View style={styles.checkTimeContainer}>
+        <View style={styles.row}>
+          <Icon name="sign-in" size={18} color="#28a745" />
+          <Text style={styles.text}>
+            Check-in: {hotel.checkIn.from} - {hotel.checkIn.to}
+          </Text>
+        </View>
+        <View style={styles.row}>
+          <Icon name="sign-out" size={18} color="#dc3545" />
+          <Text style={styles.text}>
+            Check-out: {hotel.checkOut.from} - {hotel.checkOut.to}
+          </Text>
+        </View>
+      </View>
       <View style={styles.ratingRow}>
         <View style={styles.row}>
           <Icon name="money" size={18} color="#28a745" />
