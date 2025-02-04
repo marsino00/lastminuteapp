@@ -7,9 +7,9 @@ import {
   callPhone,
   sendEmail,
   getRatingColor,
-} from '../../utils/hotelUtils';
+} from '../../utils/hotelUtils/hotelUtils';
 
-jest.mock('../../utils/hotelUtils', () => ({
+jest.mock('../../utils/hotelUtils/hotelUtils', () => ({
   openMaps: jest.fn(),
   callPhone: jest.fn(),
   sendEmail: jest.fn(),

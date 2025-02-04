@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, TextInput} from 'react-native';
 import {Dropdown} from 'react-native-element-dropdown';
-import {sortOptions} from '../../utils/hotelUtils';
+import {sortOptions} from '../../utils/hotelUtils/hotelUtils';
 import {styles} from './HotelFilters.styles';
 
 interface FilterProps {

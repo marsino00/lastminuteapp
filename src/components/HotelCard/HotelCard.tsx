@@ -9,7 +9,7 @@ import {
   callPhone,
   sendEmail,
   getRatingColor,
-} from '../../utils/hotelUtils';
+} from '../../utils/hotelUtils/hotelUtils';
 import StarRating from '../StarRating/StarRating';
 import {useMemo} from 'react';
 

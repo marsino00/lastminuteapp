@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import 'react-native-gesture-handler/jestSetup';
 
-global.jest = require('jest-mock'); // ✅ Definir Jest globalmente
+global.jest = require('jest-mock');
 
 jest.mock('react-native-reanimated', () =>
   require('react-native-reanimated/mock'),

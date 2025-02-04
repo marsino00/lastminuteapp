@@ -7,6 +7,16 @@ const initialState: HotelsState = {
   error: null,
 };
 
+export const fetchHotels = createAsyncThunk<Hotel[], void>(
+  'hotels/fetchHotels',
+  async () => {
+    const response = await fetch(
+      'https://technology.lastminute.com/api/hotel.json',
+    );
+    return response.json();
+  },
+);
+
 const hotelSlice = createSlice({
   name: 'hotels',
   initialState,
@@ -29,15 +39,5 @@ const hotelSlice = createSlice({
       });
   },
 });
-
-export const fetchHotels = createAsyncThunk<Hotel[], void>(
-  'hotels/fetchHotels',
-  async () => {
-    const response = await fetch(
-      'https://technology.lastminute.com/api/hotel.json',
-    );
-    return response.json();
-  },
-);
 
 export default hotelSlice.reducer;

@@ -6,7 +6,7 @@ import {fetchHotels} from '../../store/hotelSlice/hotelSlice';
 import {styles} from './HotelList.styles';
 import HotelCard from '../HotelCard/HotelCard';
 import HotelFilters from '../HotelFilters/HotelFilters';
-import {filterAndSortHotels} from '../../utils/hotelUtils';
+import {filterAndSortHotels} from '../../utils/hotelUtils/hotelUtils';
 
 const HotelList: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
