@@ -7,6 +7,10 @@ export const styles = StyleSheet.create({
     marginBottom: 10,
     borderRadius: 10,
     shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowOffset: {width: 2, height: 2},
+    shadowRadius: 5,
+    elevation: 3,
     width: '90%',
   },
   title: {

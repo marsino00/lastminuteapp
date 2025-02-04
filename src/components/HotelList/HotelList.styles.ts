@@ -33,8 +33,8 @@ export const styles = StyleSheet.create({
     shadowColor: '#000',
     shadowOpacity: 0.1,
     shadowOffset: {width: 0, height: 2},
-    shadowRadius: 4,
-    elevation: 3,
+    shadowRadius: 15,
+    elevation: 5,
     marginBottom: 15,
   },
   dropdown: {
@@ -62,7 +62,7 @@ export const styles = StyleSheet.create({
     gap: 20,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingBottom: 80,
+    paddingBottom: 125,
   },
   card: {
     backgroundColor: '#fff',
