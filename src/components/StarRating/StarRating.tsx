@@ -19,7 +19,7 @@ const StarRating: React.FC<StarRatingProps> = ({
       {Array.from({length: maxStars}, (_, index) => (
         <Icon
           testID="star-icon"
-          key={index}
+          key={`star-${stars}-${index}`}
           name={index < stars ? 'star' : 'star-o'}
           size={size}
           color={index < stars ? '#FFD700' : '#C0C0C0'}

@@ -1,4 +1,5 @@
 import {Linking, Platform} from 'react-native';
+import {Hotel} from 'src/store/hotelSlice/hotelSlice.types';
 
 export const openMaps = (
   latitude: number,
@@ -53,13 +54,13 @@ export const sortOptions = [
 ];
 
 export const filterAndSortHotels = (
-  hotels: any[],
+  hotels: Hotel[],
   minPrice: string,
   maxPrice: string,
-  sortOption: any,
+  sortOption: string,
 ) => {
   return hotels
-    .filter((hotel: {price: any}) => {
+    .filter((hotel: {price: number}) => {
       const price = hotel.price;
       const min = minPrice ? parseFloat(minPrice) : 0;
       const max = maxPrice ? parseFloat(maxPrice) : Infinity;
