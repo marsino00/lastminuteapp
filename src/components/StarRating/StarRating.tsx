@@ -2,6 +2,7 @@ import React from 'react';
 import {View} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {styles} from '../HotelCard/HotelCard.styles';
+import {COLORS} from '../../utils/constants/colors';
 
 interface StarRatingProps {
   stars: number;
@@ -22,7 +23,7 @@ const StarRating: React.FC<StarRatingProps> = ({
           key={`star-${stars}-${index}`}
           name={index < stars ? 'star' : 'star-o'}
           size={size}
-          color={index < stars ? '#FFD700' : '#C0C0C0'}
+          color={index < stars ? COLORS.STAR_COLOR : COLORS.TEXT_SECONDARY}
           style={styles.star}
         />
       ))}

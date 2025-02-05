@@ -1,11 +1,12 @@
 import {StyleSheet} from 'react-native';
+import {COLORS} from '../../utils/constants/colors';
 
 export const styles = StyleSheet.create({
   container: {
     padding: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f5f5f5',
+    backgroundColor: COLORS.BACKGROUND_LIGHT,
     gap: 1,
   },
   textInputContainer: {
@@ -19,18 +20,18 @@ export const styles = StyleSheet.create({
   },
   input: {
     height: 40,
-    borderColor: '#ccc',
+    borderColor: COLORS.TEXT_SECONDARY,
     borderWidth: 1,
     borderRadius: 5,
     paddingHorizontal: 10,
-    backgroundColor: '#fff',
+    backgroundColor: COLORS.BACKGROUND_LIGHT,
     marginHorizontal: 5,
   },
   filterContainer: {
-    backgroundColor: '#ffffff',
+    backgroundColor: COLORS.BACKGROUND_LIGHT,
     padding: 15,
     borderRadius: 10,
-    shadowColor: '#000',
+    shadowColor: COLORS.TEXT_PRIMARY,
     shadowOpacity: 0.1,
     shadowOffset: {width: 0, height: 2},
     shadowRadius: 15,
@@ -40,11 +41,11 @@ export const styles = StyleSheet.create({
   dropdown: {
     height: 45,
     width: '90%',
-    borderColor: '#ccc',
+    borderColor: COLORS.TEXT_SECONDARY,
     borderWidth: 1,
     borderRadius: 8,
     paddingHorizontal: 15,
-    backgroundColor: '#fff',
+    backgroundColor: COLORS.BACKGROUND_LIGHT,
     marginBottom: 10,
   },
   sortControls: {
@@ -65,11 +66,11 @@ export const styles = StyleSheet.create({
     paddingBottom: 125,
   },
   card: {
-    backgroundColor: '#fff',
+    backgroundColor: COLORS.BACKGROUND_LIGHT,
     padding: 15,
     marginBottom: 10,
     borderRadius: 10,
-    shadowColor: '#000',
+    shadowColor: COLORS.TEXT_PRIMARY,
     shadowOpacity: 0.2,
     shadowOffset: {width: 0, height: 2},
     shadowRadius: 5,
@@ -99,14 +100,14 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#007bff',
+    backgroundColor: COLORS.ACCENT_BLUE,
     paddingHorizontal: 20,
     paddingVertical: 10,
     borderRadius: 5,
     marginBottom: 20,
   },
   sortButtonText: {
-    color: '#fff',
+    color: COLORS.BACKGROUND_LIGHT,
     fontSize: 16,
     alignItems: 'center',
     marginRight: 8,

@@ -12,6 +12,7 @@ import {
 } from '../../utils/hotelUtils/hotelUtils';
 import StarRating from '../StarRating/StarRating';
 import {useMemo} from 'react';
+import {COLORS} from '../../utils/constants/colors';
 
 const HotelCard: React.FC<{hotel: Hotel}> = ({hotel}) => {
   const {width} = Dimensions.get('window');
@@ -43,7 +44,7 @@ const HotelCard: React.FC<{hotel: Hotel}> = ({hotel}) => {
       <TouchableOpacity
         onPress={() => callPhone(hotel.contact.phoneNumber)}
         style={styles.row}>
-        <Icon name="phone" size={18} color="#17a2b8" />
+        <Icon name="phone" size={18} color={COLORS.ACCENT_CYAN} />
         <Text style={[styles.text, styles.link]}>
           {hotel.contact.phoneNumber}
         </Text>
@@ -52,7 +53,7 @@ const HotelCard: React.FC<{hotel: Hotel}> = ({hotel}) => {
       <TouchableOpacity
         onPress={() => sendEmail(hotel.contact.email)}
         style={styles.row}>
-        <Icon name="envelope" size={18} color="#f39c12" />
+        <Icon name="envelope" size={18} color={COLORS.ACCENT_ORANGE} />
         <Text style={[styles.text, styles.link]}>{hotel.contact.email}</Text>
       </TouchableOpacity>
       <TouchableOpacity
@@ -65,20 +66,20 @@ const HotelCard: React.FC<{hotel: Hotel}> = ({hotel}) => {
           )
         }
         style={styles.row}>
-        <Icon name="map-marker" size={18} color="#d9534f" />
+        <Icon name="map-marker" size={18} color={COLORS.ACCENT_DARK_RED} />
         <Text style={[styles.text, styles.link]}>
           {hotel.location.address}, {hotel.location.city}
         </Text>
       </TouchableOpacity>
       <View style={styles.checkTimeContainer}>
         <View style={styles.row}>
-          <Icon name="sign-in" size={18} color="#28a745" />
+          <Icon name="sign-in" size={18} color={COLORS.PRIMARY_GREEN} />
           <Text style={styles.text}>
             Check-in: {hotel.checkIn.from} - {hotel.checkIn.to}
           </Text>
         </View>
         <View style={styles.row}>
-          <Icon name="sign-out" size={18} color="#dc3545" />
+          <Icon name="sign-out" size={18} color={COLORS.PRIMARY_RED} />
           <Text style={styles.text}>
             Check-out: {hotel.checkOut.from} - {hotel.checkOut.to}
           </Text>

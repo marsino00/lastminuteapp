@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {COLORS} from '../../utils/constants/colors';
 
 export const styles = StyleSheet.create({
   textInputContainer: {
@@ -8,11 +9,11 @@ export const styles = StyleSheet.create({
   },
   input: {
     height: 40,
-    borderColor: '#ccc',
+    borderColor: COLORS.TEXT_SECONDARY,
     borderWidth: 1,
     borderRadius: 5,
     paddingHorizontal: 10,
-    backgroundColor: '#fff',
+    backgroundColor: COLORS.BACKGROUND_LIGHT,
     marginHorizontal: 5,
   },
   inputCombo: {
@@ -20,10 +21,10 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   filterContainer: {
-    backgroundColor: '#ffffff',
+    backgroundColor: COLORS.BACKGROUND_LIGHT,
     padding: 15,
     borderRadius: 10,
-    shadowColor: '#000',
+    shadowColor: COLORS.TEXT_PRIMARY,
     shadowOpacity: 0.1,
     shadowOffset: {width: 0, height: 2},
     shadowRadius: 15,
@@ -40,11 +41,11 @@ export const styles = StyleSheet.create({
   dropdown: {
     height: 45,
     width: '90%',
-    borderColor: '#ccc',
+    borderColor: COLORS.TEXT_SECONDARY,
     borderWidth: 1,
     borderRadius: 8,
     paddingHorizontal: 15,
-    backgroundColor: '#fff',
+    backgroundColor: COLORS.BACKGROUND_LIGHT,
     marginBottom: 10,
   },
   text: {

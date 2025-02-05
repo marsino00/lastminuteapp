@@ -1,6 +1,11 @@
 import {Linking, Platform} from 'react-native';
 import {Hotel} from 'src/store/hotelSlice/hotelSlice.types';
+import {COLORS} from '../constants/colors';
 
+/**
+ * Opens the maps application with the given coordinates and address.
+ * Supports both iOS and Android map schemes.
+ */
 export const openMaps = (
   latitude: number,
   longitude: number,
@@ -22,6 +27,9 @@ export const openMaps = (
   }
 };
 
+/**
+ * Initiates a phone call to the given phone number using the native dialer.
+ */
 export const callPhone = (phoneNumber: string) => {
   const phoneUrl = `tel:${phoneNumber}`;
   Linking.openURL(phoneUrl).catch(err =>
@@ -29,6 +37,9 @@ export const callPhone = (phoneNumber: string) => {
   );
 };
 
+/**
+ * Opens the default email application with a prefilled recipient email address.
+ */
 export const sendEmail = (email: string) => {
   const emailUrl = `mailto:${email}`;
   Linking.openURL(emailUrl).catch(err =>
@@ -36,14 +47,20 @@ export const sendEmail = (email: string) => {
   );
 };
 
+/**
+ * Returns a color based on the given rating:
+ * - Green for ratings >= 8
+ * - Yellow for ratings >= 6
+ * - Red for ratings < 6
+ */
 export const getRatingColor = (rating: number) => {
   if (rating >= 8) {
-    return '#28a745';
+    return COLORS.PRIMARY_GREEN;
   }
   if (rating >= 6) {
-    return '#ffc107';
+    return COLORS.PRIMARY_YELLOW;
   }
-  return '#dc3545';
+  return COLORS.PRIMARY_RED;
 };
 
 export const sortOptions = [
@@ -53,6 +70,11 @@ export const sortOptions = [
   {label: 'Rating descending', value: 'ratingDesc'},
 ];
 
+/**
+ * Filters and sorts a list of hotels based on the given price range and sorting option.
+ * - Filters hotels within the specified min and max price.
+ * - Sorts hotels based on price or user rating in ascending/descending order.
+ */
 export const filterAndSortHotels = (
   hotels: Hotel[],
   minPrice: string,

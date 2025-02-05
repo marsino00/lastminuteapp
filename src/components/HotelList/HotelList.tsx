@@ -7,6 +7,7 @@ import {styles} from './HotelList.styles';
 import HotelCard from '../HotelCard/HotelCard';
 import HotelFilters from '../HotelFilters/HotelFilters';
 import {filterAndSortHotels} from '../../utils/hotelUtils/hotelUtils';
+import {COLORS} from '../../utils/constants/colors';
 
 const HotelList: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -34,7 +35,7 @@ const HotelList: React.FC = () => {
   if (loading) {
     return (
       <View style={styles.centered}>
-        <ActivityIndicator size="large" color="#0000ff" />
+        <ActivityIndicator size="large" color={COLORS.ACCENT_PINK} />
       </View>
     );
   }

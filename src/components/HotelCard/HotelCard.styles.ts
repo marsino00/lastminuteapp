@@ -1,12 +1,13 @@
 import {StyleSheet} from 'react-native';
+import {COLORS} from '../../utils/constants/colors';
 
 export const styles = StyleSheet.create({
   card: {
-    backgroundColor: '#fff',
+    backgroundColor: COLORS.BACKGROUND_LIGHT,
     padding: 15,
     marginBottom: 10,
     borderRadius: 10,
-    shadowColor: '#000',
+    shadowColor: COLORS.TEXT_PRIMARY,
     shadowOpacity: 0.1,
     shadowOffset: {width: 2, height: 2},
     shadowRadius: 5,
@@ -29,7 +30,7 @@ export const styles = StyleSheet.create({
     height: '100%',
   },
   link: {
-    color: '#007AFF',
+    color: COLORS.TEXT_LINK,
     textDecorationLine: 'underline',
   },
   starContainer: {
@@ -51,7 +52,7 @@ export const styles = StyleSheet.create({
   price: {
     fontSize: 35,
     fontWeight: '900',
-    color: '#F2007D',
+    color: COLORS.ACCENT_PINK,
   },
   ratingContainer: {
     paddingHorizontal: 12,
@@ -62,7 +63,7 @@ export const styles = StyleSheet.create({
     marginVertical: 5,
   },
   ratingText: {
-    color: '#fff',
+    color: COLORS.BACKGROUND_LIGHT,
     fontWeight: 'bold',
     fontSize: 18,
   },
